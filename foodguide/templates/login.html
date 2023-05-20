@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login & Signup Page</title>
+	{% comment %} {% extends "base.html" %} {% endcomment %}
+	{% load static %}
+	{% block styles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}">
+	{% endblock %}
+
+</head>
+<body>
+	<div class="page" style="background-image: url('{% static 'Cover.jpg' %}')">
+		<div class="form">
+			<div class="button">
+				<div id="button2"></div>
+				<button type="button" class="button1" onclick="Login()">Log In</button>
+				<button type="button" class="button1" onclick="Signup()">Sign Up</button>
+			</div>
+		<div class="icons">
+			<a href="https://www.facebook.com/" target="_blank"><img src="{% static 'fb.png' %}"></a>
+			<a href="https://www.instagram.com/" target="_blank"><img src="{% static 'in.png' %}"></a>
+			<a href="https://accounts.google.com/" target="_blank"><img src="{% static 'gg.png' %}"></a>
+			<a href="https://twitter.com/login" target="_blank"><img src="{% static 'tw.png' %}"></a>
+		</div>
+		<form id="Login"class="input">
+			<input type="text" class="field1" placeholder="User Name" required="">
+			<input type=password class="field1" placeholder="Password" required="">
+			<input type="checkbox" class="check-box"><span>Remember Password</span>
+			<button type="submit" class="submitbutton">Log In</button>
+		</form>
+		<form id="Signup"class="input">
+			<input type="text" class="field1" placeholder="User Name" required="">
+			<input type="email" class="field1" placeholder="Email" required="">
+			<input type="password" class="field1" placeholder="Password" required="">
+			<input type="password" class="field1" placeholder="Confirm Password" required="">
+			<input type="checkbox" class="check-box"><span>I agree to the terms and conditions, <a href="terms and conditions.txt" target="_blank" class="terms">Read Here</a></span>
+			<button type="submit" class="submitbutton">Sign Up</button>
+		</form>
+	</div>
+		</div>
+	</div>
+	<script>
+		var x=document.getElementById("Login");
+		var y=document.getElementById("Signup");
+		var z=document.getElementById("button2");
+
+		function Signup(){
+			x.style.left="-400px";
+			y.style.left="50px";
+			z.style.left="110px";
+		}
+		function Login(){
+			x.style.left="50px";
+			y.style.left="450px";
+			z.style.left="0px";
+		}
+	</script>
+</body>
+</html>
