@@ -8,3 +8,10 @@ def view_login(request):
         'login_page': 'login',
     }
     return HttpResponse(template.render(context, request))
+
+def view_index(request):
+    template = loader.get_template('index.html')
+    context = {
+        'index_page': 'index',
+    }
+    return HttpResponse(template.render(context, request))
