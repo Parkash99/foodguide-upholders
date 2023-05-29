@@ -789,3 +789,16 @@ section {
   color: #f7ca3e;
   font-weight: 500;
 }
+#search-bar-li {
+  float: right;
+  margin-top: 10px;
+}
+
+#search-bar {
+  width: 200px;
+  padding: 8px;
+}
+
+#search-button {
+  padding: 8px 12px;
+}

@@ -1,4 +1,3 @@
-//   --﷽--
 
 // selecting all necessary dom element
 
@@ -66,5 +65,3 @@ const connectSecWithNavLink = () => {
   });
 };
 
-// happy coding!!!!
-// this project made by Fahad at 27th April, 2022.

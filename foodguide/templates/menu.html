@@ -1,0 +1,167 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>foodguide.pk</title>
+    <link
+      rel="shortcut icon"
+      href="{% static '/images/title-logo.png' %}"
+      type="image/x-icon"
+    />
+
+    <!-- ----linked font awesome cdn---- -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ----linked style.css file---- -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <!-- ----linked media.css file---- -->
+    <link rel="stylesheet" href="{% static 'css/media.css' %}" />
+    <style>
+      #search-bar-li {
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+      
+      .search-form {
+        display: flex;
+        align-items: center;
+      }
+      
+      #search-bar {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+      }
+      
+      #search-button {
+        margin-left: 10px;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: #f7ca3e;
+        color: black;
+      }         
+    </style>
+  </head>
+  <body>
+    <!-- ====markup header element==== -->
+    <header class="header">
+      <!-- ---header logo--- -->
+      <div class="header-logo">
+        <img src="{% static 'images/logo-img.png' %}" alt="logo" />
+      </div>
+
+      <!-- ---navigation--- -->
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="{% url 'dashboard' %}">home</a>
+          </li>
+          <li>
+            <a href="#about">about</a>
+          </li>
+          <li>
+            <a class="active" href="">menu</a>
+          </li>
+          <li>
+            <a href="#popular">popular</a>
+          </li>
+          <li>
+            <a href="#gallery">gallery</a>
+          </li>
+          <li>
+            <a href="#order">order</a>
+          </li>
+          <li>
+            <a href="{% url 'logout' %}" style="color:red;">Logout</a>
+          </li>
+          <li id="search-bar-li">
+            <form class="search-form">
+              <input id="search-bar" type="text" placeholder="Search">
+              <button id="search-button" type="submit">Search</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+      <!-- ---menu bar--- -->
+      <div id="menu-bar" class="fas fa-bars"></div>
+    </header>
+    <section id="popular" class="popular">
+      <h2>most <span>popular</span> foods</h2>
+
+      <div class="popular-content">
+        <!-- ---card 01--- -->
+        <div class="p-card">
+          <img src="{% static 'images/product-1.jpg' %}" alt="Net Error" />
+          <h4>delicious food</h4>
+          <div class="review">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="price">$ 30.00</p>
+          <input type="button" value="add to cart" />
+        </div>
+
+        <!-- ---card 02--- -->
+        <div class="p-card">
+          <img src="{% static 'images/product-2.jpg' %}" alt="Net Error" />
+          <h4>delicious food</h4>
+          <div class="review">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="price">$ 30.00</p>
+          <input type="button" value="add to cart" />
+        </div>
+
+        <!-- ---card 03--- -->
+        <div class="p-card">
+          <img src="{% static 'images/product-3.jpg' %}" alt="Net Error" />
+          <h4>delicious food</h4>
+          <div class="review">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="price">$ 30.00</p>
+          <input type="button" value="add to cart" />
+        </div>
+
+        <!-- ---card 04--- -->
+        <div class="p-card">
+          <img src="{% static 'images/product-4.jpg' %}" alt="Net Error" />
+          <h4>delicious food</h4>
+          <div class="review">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="price">$ 30.00</p>
+          <input type="button" value="add to cart" />
+        </div>
+      </div>
+    </section>
+</body>
+</html>

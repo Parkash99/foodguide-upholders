@@ -1,4 +1,4 @@
-<!-- {% load static %} -->  <!-- Uncomment this line if you haven't loaded static files in your template yet -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +73,7 @@
             <a href="#about">about</a>
           </li>
           <li>
-            <a href="#menu">menu</a>
+            <a href="{% url 'menu' %}">menu</a>
           </li>
           <li>
             <a href="#popular">popular</a>
@@ -85,7 +85,7 @@
             <a href="#order">order</a>
           </li>
           <li>
-            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'logout' %}" style="color:red;">Logout</a>
           </li>
           <li id="search-bar-li">
             <form class="search-form">
@@ -99,6 +99,7 @@
       <!-- ---menu bar--- -->
       <div id="menu-bar" class="fas fa-bars"></div>
     </header>
+
 
     <!-- ====markup main element==== -->
 
@@ -144,60 +145,9 @@
       </section>
 
       <!-- ====markup delicious food section==== -->
-      <section id="menu" class="menu">
-        <h2>our delicious <span>menu</span></h2>
-        <div class="catagory">
-          <input type="button" value="breakfast" />
-          <input type="button" class="active" value="lunch" />
-          <input type="button" value="dinner" />
-          <input type="button" value="desert" />
-        </div>
-
-        <div class="catagory-img">
-          <img id="c-img" src="{% static 'images/menu-lunch.jpg' %}" alt="Net Error" />
-        </div>
-
-        <!-- ---info content 01--- -->
-        <div class="menu-content">
-          <div class="info">
-            <h3><span>01.</span>we serve best food in the country</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-              perspiciatis.
-            </p>
-          </div>
-
-          <!-- ---info content 02--- -->
-          <div class="info">
-            <h3><span>02.</span>we serve best food in the country</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-              perspiciatis.
-            </p>
-          </div>
-
-          <!-- ---info content 03--- -->
-          <div class="info">
-            <h3><span>03.</span>we serve best food in the country</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-              perspiciatis.
-            </p>
-          </div>
-
-          <!-- ---info content 04--- -->
-          <div class="info">
-            <h3><span>04.</span>we serve best food in the country</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-              perspiciatis.
-            </p>
-          </div>
-        </div>
-      </section>
-
   
       <!-- ====markup popular section==== -->
+      
   
         <!-- ====markup gallery section==== -->
         <section id="gallery" class="gallery">
