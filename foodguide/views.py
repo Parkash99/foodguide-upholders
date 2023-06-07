@@ -53,13 +53,13 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('dashboard')  # Redirect to the dashboard or any other desired page
+            return redirect('dashboard')  # Redirect to the dashboard
         else:
             error_message = 'Invalid credentials'  # Error message to display if authentication fails
             return render(request, 'login.html', {'error_message': error_message})
     else:
         return render(request, 'login.html')
-    
+
 def signup_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -78,12 +78,13 @@ def signup_view(request):
             return render(request, 'signup.html', {'error_message': error_message})
     else:
         return render(request, 'signup.html')
-    
+
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
     return redirect('index')
 
+# View for displaying the menu items
 def menu_view(request):
     query = request.GET.get('q')
     if query:
@@ -92,6 +93,7 @@ def menu_view(request):
         menu_items = MenuItem.objects.all()
     return render(request, 'menu.html', {'menu_items': menu_items, 'search_query': query})
 
+# View for displaying the order page
 def order_view(request):
     item_name = request.GET.get('item_name')
     quantity = request.GET.get('quantity')
@@ -102,7 +104,6 @@ def order_view(request):
         'quantity': quantity,
     }
     return HttpResponse(template.render(context, request))
-
 
 def place_order_view(request):
     if request.method == 'POST':
@@ -128,6 +129,7 @@ def place_order_view(request):
 
     return HttpResponseBadRequest('Invalid request')
 
+# Function to generate a unique order ID
 def generate_unique_order_id():
     timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
     random_string = str(uuid.uuid4()).replace('-', '')[:6]
@@ -136,7 +138,6 @@ def generate_unique_order_id():
 
 def order_success(request):
     return render(request, 'order_success.html')
-
 
 def rate_order(request):
     if request.method == 'POST':
@@ -150,7 +151,6 @@ def rate_order(request):
             # Handle the case if the order does not exist
             return HttpResponseBadRequest('Invalid order')
         
-        return redirect('dashboard')  # Redirect to a 'thank you' page or another appropriate URL
+        return redirect('dashboard')  # Redirect to a 'thank you' page
     else:
         return redirect('order')  # Redirect back to the order page if accessed directly without submission
-

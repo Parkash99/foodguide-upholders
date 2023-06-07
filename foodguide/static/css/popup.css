@@ -78,3 +78,23 @@
   .popup button#rating-button:hover {
     background-color: #5bb43e;
   }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 767px) {
+    .popup {
+      /* Styles for mobile view */
+      /* Adjust the width and height as per your requirements */
+      width: 80%;
+      height: 80%;
+    }
+  }
+  
+  /* Media query for tablet devices */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .popup {
+      /* Styles for tablet view */
+      /* Adjust the width and height as per your requirements */
+      width: 60%;
+      height: 60%;
+    }
+  }
