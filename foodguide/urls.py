@@ -12,9 +12,12 @@ urlpatterns = [
     path('dashboard/', views.dashboard_view, name='dashboard'),
     path('menu/', views.menu_view, name='menu'),
     path('order/', views.order_view, name='order'),
+    path('place_order/', views.place_order_view, name='place_order'),
+    path('order_success/', views.order_success, name='order_success'),
+    path('rate-order/', views.rate_order, name='rate_order'),
     path('admin/', admin.site.urls),
     # Other URL patterns for your app
 ]
 
 if settings.DEBUG:
-    urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

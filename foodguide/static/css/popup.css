@@ -1,0 +1,80 @@
+.popup{
+    width: 450px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    text-align: center;
+    padding: 0 30px 30px;
+    columns: #333;
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 60%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.popup para{
+    font-size: 20px;
+}
+.popup .rating {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .popup .rating input[type="radio"] {
+    display: none;
+  }
+  
+  .popup .rating label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    margin-right: 5px;
+    transform: scaleX(-1);
+    unicode-bidi: bidi-override;
+    direction: rtl; /* Added direction property */
+  }
+  
+  .popup .rating label:hover,
+  .popup .rating label:hover ~ label,
+  .popup .rating input[type="radio"]:checked ~ label {
+    color: gold;
+    transform: scaleX(-1);
+    unicode-bidi: bidi-override;
+    direction: rtl; /* Added direction property */
+  }
+  
+  .popup p {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .popup button#rating-button {
+    width: 60%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup button#rating-button:hover {
+    background-color: #5bb43e;
+  }

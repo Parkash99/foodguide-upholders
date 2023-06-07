@@ -28,11 +28,7 @@
     <!-- ----linked media.css file---- -->
     <link rel="stylesheet" href="{% static 'css/media.css' %}" />
     <link rel="stylesheet" href="{% static 'css/media2.css' %}" />
-    <style>
-      .review {
-        padding-top: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/popup.css' %}" />
   </head>
   <body>
     <!-- ====markup header element==== -->
@@ -77,28 +73,35 @@
       <!-- ---menu bar--- -->
       <div id="menu-bar" class="fas fa-bars"></div>
     </header>
-    <section id="popular" class="popular">
-      <h2>our <span>delicious</span> menu</h2>
-
-      <div class="popular-content">
-        <!-- ---card 01--- -->
-        {% for menu_item in menu_items %}
-        <div class="p-card">
-          <img src="{{ menu_item.image.url }}" alt="Net Error" />
-          <h4>{{ menu_item.title }}</h4>
-          <strong><p style="font-size: 16px;">Category: {{ menu_item.category }}</p></strong>
-          <div class="review">
-            {% for _ in menu_item.get_rating_stars %}
-                <i class="fas fa-star"></i>
-            {% endfor %}
+    <!-- ====markup order section==== -->
+    <section id="order" class="order">
+        <h2>Thank You<span>For</span>Ordering</h2>
+      
+        <div class="order-content">
+          <div class="popup">
+            <h2>Thank You!</h2>
+            <p style="font-size: 25px">Your order has been placed successfully.</p>
+            <!-- Rating stars -->
+        <form action="{% url 'rate_order' %}" method="POST" class="rating-form">
+            {% csrf_token %}
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1">&#9733;</label>
+              </div>
+              <button id="rating-button" type="submit">Rate</button>
+          </div>
+        </form>
+          <img src="{% static 'images/order1.jpg' %}" alt="Net Error" />
         </div>
-        
-          <!-- Add other fields as needed -->
-          <p class="price">$ {{ menu_item.price }}</p>
-          <a href="{% url 'order' %}?item_name={{ menu_item.title }}&quantity=1"><input type="button" value="Order Now" /></a>
-        </div>
-        {% endfor %}
-    </section>
-<script src="/static/js/main.js"></script>
+      </section>
+      
 </body>
 </html>

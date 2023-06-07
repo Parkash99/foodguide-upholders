@@ -72,15 +72,15 @@
         <h2>make an <span>order</span></h2>
 
         <div class="order-content">
-          <form action="#" class="order-form" autocomplete="off">
+          <form action="{% url 'place_order' %}" class="order-form" autocomplete="off" method="post">
             {% csrf_token %}
             <input type="text" name="name" placeholder="name" required />
             <input type="email" name="email" placeholder="email" required />
-            <input type="password" name="password" placeholder="password" required />
             <input type="number" name="phone" placeholder="phone Number" required />
+            <input type="text" name="item_name" placeholder="item name" required value="{{ item_name }}" />
+            <input type="number" name="quantity" placeholder="quantity" required value="{{ quantity }}" />
             <textarea name="address" cols="30" rows="8" placeholder="address"></textarea>
-
-            <button type="submit">Order now</button>
+            <button type="submit">Place Order</button>
           </form>
           <img src="{% static 'images/order1.jpg' %}" alt="Net Error" />
         </div>
