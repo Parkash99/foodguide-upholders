@@ -27,33 +27,7 @@
 
     <!-- ----linked media.css file---- -->
     <link rel="stylesheet" href="{% static 'css/media.css' %}" />
-    <style>
-      #search-bar-li {
-        flex: 1;
-        display: flex;
-        align-items: center;
-      }
-      
-      .search-form {
-        display: flex;
-        align-items: center;
-      }
-      
-      #search-bar {
-        width: 100%;
-        padding: 8px;
-        border-radius: 4px;
-      }
-      
-      #search-button {
-        margin-left: 10px;
-        cursor: pointer;
-        padding: 8px 12px;
-        border-radius: 4px;
-        background-color: #f7ca3e;
-        color: black;
-      }         
-    </style>
+    <link rel="stylesheet" href="{% static 'css/media2.css' %}" />
   </head>
   <body>
     <!-- ====markup header element==== -->
@@ -147,6 +121,71 @@
       <!-- ====markup delicious food section==== -->
   
       <!-- ====markup popular section==== -->
+      <section id="popular" class="popular">
+        <h2>most <span>popular</span> foods</h2>
+
+        <div class="popular-content">
+          <!-- ---card 01--- -->
+          <div class="p-card">
+            <img src="{% static 'images/product-1.jpg' %}" alt="Net Error" />
+            <h4>delicious food</h4>
+            <div class="review">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$ 30.00</p>
+            <input type="button" value="Order Now" />
+          </div>
+
+          <!-- ---card 02--- -->
+          <div class="p-card">
+            <img src="{% static 'images/product-2.jpg' %}" alt="Net Error" />
+            <h4>delicious food</h4>
+            <div class="review">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$ 30.00</p>
+            <input type="button" value="Order Now" />
+          </div>
+
+          <!-- ---card 03--- -->
+          <div class="p-card">
+            <img src="{% static 'images/product-3.jpg' %}" alt="Net Error" />
+            <h4>delicious food</h4>
+            <div class="review">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$ 30.00</p>
+            <input type="button" value="Order Now" />
+          </div>
+
+          <!-- ---card 04--- -->
+          <div class="p-card">
+            <img src="{% static 'images/product-4.jpg' %}" alt="Net Error" />
+            <h4>delicious food</h4>
+            <div class="review">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="price">$ 30.00</p>
+            <input type="button" value="Order Now" />
+          </div>
+        </div>
+      </section>
       
   
         <!-- ====markup gallery section==== -->

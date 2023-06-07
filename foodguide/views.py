@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from .models import MenuItem
+from django.db.models import Q
 
 def view_login(request):
     template = loader.get_template('login.html')
@@ -44,6 +46,7 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
+        
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
@@ -65,15 +68,9 @@ def signup_view(request):
         if password == confirm_password:
             # Create a new user
             user = User.objects.create_user(username=username, password=password)
-            # You can perform additional actions here, like sending a confirmation email
-            
-            # Automatically log in the user after registration
             login(request, user)
-            
-            # Redirect the user to the dashboard or any other desired page
             return redirect('dashboard')
         else:
-            # Passwords do not match, handle the error appropriately
             error_message = 'Passwords do not match.'
             return render(request, 'signup.html', {'error_message': error_message})
     else:
@@ -82,5 +79,19 @@ def signup_view(request):
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
-    # Redirect the user to the login page or any other desired page
     return redirect('index')
+
+def menu_view(request):
+    query = request.GET.get('q')
+    if query:
+        menu_items = MenuItem.objects.filter(Q(title__icontains=query) | Q(category__icontains=query))
+    else:
+        menu_items = MenuItem.objects.all()
+    return render(request, 'menu.html', {'menu_items': menu_items, 'search_query': query})
+
+def order_view(request):
+    template = loader.get_template('order.html')
+    context = {
+        'order_page': 'order',
+    }
+    return HttpResponse(template.render(context, request))

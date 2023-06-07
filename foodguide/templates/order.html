@@ -56,43 +56,34 @@
             <a href="#gallery">gallery</a>
           </li>
           <li>
-            <a href="#Order Now">Order Now</a>
-          </li>
-          <li>
             <a href="{% url 'logout' %}" style="color:red;">Logout</a>
           </li>
           <li id="search-bar-li">
-            <form action="{% url 'menu' %}" method="GET" class="search-form">
-              <input id="search-bar" type="text" name="q" placeholder="Search" value="{{ search_query }}">
+            <form class="search-form">
+              <input id="search-bar" type="text" placeholder="Search">
               <button id="search-button" type="submit">Search</button>
             </form>
           </li>
         </ul>
       </nav>
-      <!-- ---menu bar--- -->
-      <div id="menu-bar" class="fas fa-bars"></div>
     </header>
-    <section id="popular" class="popular">
-      <h2>our <span>delicious</span> menu</h2>
+    <!-- ====markup order section==== -->
+    <section id="order" class="order">
+        <h2>make an <span>order</span></h2>
 
-      <div class="popular-content">
-        <!-- ---card 01--- -->
-        {% for menu_item in menu_items %}
-        <div class="p-card">
-          <img src="{{ menu_item.image.url }}" alt="Net Error" />
-          <h4>{{ menu_item.title }}</h4>
-          <strong><p style="font-size: 16px;">Category: {{ menu_item.category }}</p></strong>
-          <div class="review">
-            {% comment %} {% for star in menu_item.get_rating_stars %}
-              <i class="fas fa-star"></i>
-            {% endfor %} {% endcomment %}
-          </div>
-          <!-- Add other fields as needed -->
-          <p class="price">$ {{ menu_item.price }}</p>
-          <a href="{% url 'order' %}"><input type="button" value="Order Now" /></a>
+        <div class="order-content">
+          <form action="#" class="order-form" autocomplete="off">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="name" required />
+            <input type="email" name="email" placeholder="email" required />
+            <input type="password" name="password" placeholder="password" required />
+            <input type="number" name="phone" placeholder="phone Number" required />
+            <textarea name="address" cols="30" rows="8" placeholder="address"></textarea>
+
+            <button type="submit">Order now</button>
+          </form>
+          <img src="{% static 'images/order1.jpg' %}" alt="Net Error" />
         </div>
-        {% endfor %}
-    </section>
-<script src="/static/js/main.js"></script>
+      </section>
 </body>
 </html>
