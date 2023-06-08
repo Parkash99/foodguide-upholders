@@ -63,8 +63,8 @@ Click here to read complete documentation
 ## Authors
 
 - [@Parkash](https://github.com/Parkash99)
-- [@Zubair](https://github.com/zubair)
-- [@Suman](https://github.com/suman)
+- [@Zubair](https://github.com/ChaudhryZubairAkhtar)
+- [@Suman](https://github.com/sumanseharkhan)
 
 
 ## License
